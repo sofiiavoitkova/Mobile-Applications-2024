@@ -122,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/strongPasswordInput"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="24dp">
+        android:layout_marginStart="20dp">
 
         <CheckBox
             android:id="@+id/rememberMeCheckBox"
@@ -137,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/terms"
+            android:layout_marginStart="3dp"
             android:textSize="12sp"
             android:textColor="#6C63FF"
             android:textStyle="bold" />
@@ -146,6 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/and"
+            android:layout_marginStart="3dp"
             android:textSize="12sp"
             android:textColor="@color/black" />
 
@@ -154,6 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/conditions"
+            android:layout_marginStart="3dp"
             android:textSize="12sp"
             android:textColor="#6C63FF"
             android:textStyle="bold" />
