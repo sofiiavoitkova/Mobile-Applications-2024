@@ -9,10 +9,8 @@
 
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
+        style="@style/StandardImageView"
         android:layout_marginTop="-8dp"
-        android:layout_marginStart="110dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +20,9 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/TitleText"
         android:text="@string/get_started"
         android:textSize="38sp"
-        android:textColor="@color/black"
         android:layout_marginTop="160dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,11 +30,8 @@
 
     <TextView
         android:id="@+id/signInText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/SubtitleText"
         android:text="@string/create_account_subtitle"
-        android:textSize="15sp"
-        android:textColor="#808080"
         android:layout_marginTop="-5dp"
         android:layout_marginStart="-5dp"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText"
@@ -45,86 +40,54 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameInput"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
+        style="@style/TextInputLayout"
         android:layout_marginTop="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/hint_full_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInText">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInput"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
+        style="@style/TextInputLayout"
         android:layout_marginTop="18dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/hint_valid_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameInput">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/numberInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
+        style="@style/TextInputLayout"
         android:layout_marginTop="18dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/hint_phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailInput">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/strongPasswordInput"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
+        style="@style/TextInputLayout"
         android:layout_marginTop="18dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/hint_strong_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -138,54 +101,35 @@
 
         <CheckBox
             android:id="@+id/rememberMeCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/checking_box"
-            android:textSize="12sp"
-            android:textColor="@color/black" />
+            style="@style/CheckboxText"
+            android:text="@string/checking_box" />
 
         <TextView
             android:id="@+id/termsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/LinkText"
             android:text="@string/terms"
-            android:layout_marginStart="3dp"
-            android:textSize="12sp"
-            android:textColor="#6C63FF"
-            android:textStyle="bold" />
+            android:layout_marginStart="3dp" />
 
         <TextView
             android:id="@+id/andTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CheckboxText"
             android:text="@string/and"
-            android:layout_marginStart="3dp"
-            android:textSize="12sp"
-            android:textColor="@color/black" />
+            android:layout_marginStart="3dp" />
 
         <TextView
             android:id="@+id/conditionsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/LinkText"
             android:text="@string/conditions"
-            android:layout_marginStart="3dp"
-            android:textSize="12sp"
-            android:textColor="#6C63FF"
-            android:textStyle="bold" />
+            android:layout_marginStart="3dp" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
-        android:layout_width="363dp"
-        android:layout_height="57dp"
+        style="@style/Button"
+        android:text="@string/next"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="70dp"
-        android:backgroundTint="#6C63FF"
-        android:text="@string/next"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
