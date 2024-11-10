@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.create_account"
+    namespace = "com.example.accountcreate"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.create_account"
-        minSdk = 24
+        applicationId = "com.example.accountcreate"
+        minSdk = 22
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

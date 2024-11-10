@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "create-account"
+rootProject.name = "accountcreate"
 include(":app")
  
