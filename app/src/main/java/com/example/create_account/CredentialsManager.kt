@@ -1,6 +1,10 @@
 package com.example.create_account
 
 class CredentialsManager {
+
+    private val validEmail = "test@te.st"
+    private val validPassword = "1234"
+
     private val emailPattern = (
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
@@ -11,7 +15,7 @@ class CredentialsManager {
                     ")+"
             )
 
-    private val passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#\$%^&*()])(?=\\S+\$).{8,}\$"
+    private val passwordPattern = ".{4,}"
 
     fun isEmailValid(email: String): Boolean {
         val regex = Regex(emailPattern)
@@ -21,5 +25,9 @@ class CredentialsManager {
     fun isPasswordValid(password: String): Boolean {
         val regex = Regex(passwordPattern)
         return regex.matches(password)
+    }
+
+    fun login(email: String, password: String): Boolean {
+        return email == validEmail && password == validPassword
     }
 }
