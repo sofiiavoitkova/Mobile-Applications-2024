@@ -13,19 +13,27 @@ class SignInActivity : AppCompatActivity() {
     private val credentialsManager = CredentialsManager()
 
     private val registerNowLabel: TextView
+
         get() = findViewById(R.id.registerNowText)
 
     private val emailInputLayout: TextInputLayout
+
         get() = findViewById(R.id.emailInput)
+
     private val email: String
+
         get() = emailInputLayout.editText?.text?.toString().orEmpty()
 
     private val passwordInputLayout: TextInputLayout
+
         get() = findViewById(R.id.passwordInput)
+
     private val password: String
+
         get() = passwordInputLayout.editText?.text?.toString().orEmpty()
 
     private val nextButton: Button
+
         get() = findViewById(R.id.nextButton)
 
     override fun onCreate(savedInstanceState: Bundle?) {
