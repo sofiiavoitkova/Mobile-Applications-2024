@@ -2,8 +2,7 @@ package com.example.create_account
 
 class CredentialsManager {
 
-    private val validEmail = "test@te.st"
-    private val validPassword = "1234"
+    private val map: MutableMap<String, String> = mutableMapOf()
 
     private val emailPattern = (
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
@@ -19,7 +18,7 @@ class CredentialsManager {
 
     fun isEmailValid(email: String): Boolean {
         val regex = Regex(emailPattern)
-        return email.isNotEmpty() && regex.matches(email)
+        return regex.matches(email)
     }
 
     fun isPasswordValid(password: String): Boolean {
@@ -27,7 +26,43 @@ class CredentialsManager {
         return regex.matches(password)
     }
 
+    fun register(email: String, password: String): Boolean {
+        val normalizedEmail = email.lowercase()
+
+        if (!isEmailValid(email)) {
+            return false
+        }
+
+        if (map.containsKey(normalizedEmail)) {
+            return false
+        }
+
+        map[normalizedEmail] = password
+        return true
+    }
+
     fun login(email: String, password: String): Boolean {
-        return email == validEmail && password == validPassword
+        val normalizedEmail = email.lowercase()
+        return map[normalizedEmail] == password
+    }
+
+    companion object {
+        private val instance = CredentialsManager()
+
+        fun isEmailValid(email: String): Boolean {
+            return instance.isEmailValid(email)
+        }
+
+        fun isPasswordValid(password: String): Boolean {
+            return instance.isPasswordValid(password)
+        }
+
+        fun login(email: String, password: String): Boolean {
+            return instance.login(email, password)
+        }
+
+        fun register(email: String, password: String): Boolean {
+            return instance.register(email, password)
+        }
     }
 }
