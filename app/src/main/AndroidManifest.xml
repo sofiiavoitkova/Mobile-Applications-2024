@@ -25,8 +25,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateAccountActivity"
-            android:exported="false" />
+            android:name="com.example.create_account.CreateAccountActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
