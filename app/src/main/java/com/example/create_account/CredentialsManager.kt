@@ -29,17 +29,14 @@ class CredentialsManager {
     fun register(email: String, password: String): Boolean {
         val normalizedEmail = email.lowercase()
 
-        // Check if email is valid
         if (!isEmailValid(email)) {
-            return false // Email is invalid, so return false
+            return false
         }
 
-        // Check if email is already registered
         if (map.containsKey(normalizedEmail)) {
-            return false // Email already exists
+            return false
         }
 
-        // Add credentials to the map
         map[normalizedEmail] = password
         return true
     }
