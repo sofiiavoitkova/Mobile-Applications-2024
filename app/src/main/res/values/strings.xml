@@ -21,4 +21,7 @@
     <string name="conditions">Conditions</string>
     <string name="already_member">Already a member?</string>
     <string name="log_in">Log in</string>
+    <string name="fragment_b">Fragment B</string>
+    <string name="fragment_a">Fragment A</string>
+    <string name="switch_btn">switch</string>
 </resources>
