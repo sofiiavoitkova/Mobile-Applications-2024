@@ -13,13 +13,17 @@
         android:theme="@style/Theme.Createaccount"
         tools:targetApi="31">
         <activity
-            android:name="com.example.create_account.SampleActivity"
-            android:exported="true">
+            android:name="com.example.create_account.FragmentsActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.create_account.SampleActivity"
+            android:exported="true" />
         <activity
             android:name="com.example.create_account.MainActivity"
             android:exported="false" />
@@ -30,4 +34,5 @@
             android:name="com.example.create_account.CreateAccountActivity"
             android:exported="true" />
     </application>
+
 </manifest>
