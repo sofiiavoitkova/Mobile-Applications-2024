@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.accountcreate.R
 
-class ListAdapter(private val mList: List<ListItem>) :
+class ListAdapter(private val itemList: List<ListItem>) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,7 +20,7 @@ class ListAdapter(private val mList: List<ListItem>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val recipe = mList[position]
+        val recipe = itemList[position]
 
         holder.imageView.setImageResource(recipe.image)
         holder.textView.text = recipe.title
@@ -46,10 +46,10 @@ class ListAdapter(private val mList: List<ListItem>) :
     }
 
     override fun getItemCount(): Int {
-        return mList.size
+        return itemList.size
     }
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.itemImage)
         val textView: TextView = itemView.findViewById(R.id.itemTitle)
         val likeButton: Button = itemView.findViewById(R.id.btnLike)
