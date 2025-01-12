@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.accountcreate.R
 
-class ListAdapter(private val itemList: List<ListItem>) :
+class ListAdapter(private var itemList: List<ListItem>) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,17 +36,30 @@ class ListAdapter(private val itemList: List<ListItem>) :
 
         holder.likeButton.setOnClickListener {
             val recipeId = recipe.id
-            Toast.makeText(holder.itemView.context, "Like button clicked, ID: $recipeId", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                holder.itemView.context,
+                "Like button clicked, ID: $recipeId",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         holder.shareButton.setOnClickListener {
             val recipeId = recipe.id
-            Toast.makeText(holder.itemView.context, "Share button clicked, ID: $recipeId", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                holder.itemView.context,
+                "Share button clicked, ID: $recipeId",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
+    }
+
+    fun updateList(newList: List<ListItem>) {
+        itemList = newList
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
