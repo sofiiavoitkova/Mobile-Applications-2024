@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val searchView = findViewById<androidx.appcompat.widget.SearchView>(R.id.searchView)
+        searchView.setIconifiedByDefault(false)
 
         val adapter = ListAdapter(
             listOf(),
