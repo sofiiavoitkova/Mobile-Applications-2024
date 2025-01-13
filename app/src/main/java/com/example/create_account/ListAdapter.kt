@@ -6,12 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Button
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.accountcreate.R
 
-class ListAdapter(private var itemList: List<ListItem>) :
-    RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(
+    private var itemList: List<ListItem>,
+    private val itemClickListener: (ListItem) -> Unit,
+    private val actionClickListener: (ListItem, String) -> Unit
+) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -26,30 +28,15 @@ class ListAdapter(private var itemList: List<ListItem>) :
         holder.textView.text = recipe.title
 
         holder.itemView.setOnClickListener {
-            val recipeId = recipe.id
-            Toast.makeText(
-                holder.itemView.context,
-                "Recipe clicked, ID: $recipeId",
-                Toast.LENGTH_SHORT
-            ).show()
+            itemClickListener(recipe)
         }
 
         holder.likeButton.setOnClickListener {
-            val recipeId = recipe.id
-            Toast.makeText(
-                holder.itemView.context,
-                "Like button clicked, ID: $recipeId",
-                Toast.LENGTH_SHORT
-            ).show()
+            actionClickListener(recipe, "Like")
         }
 
         holder.shareButton.setOnClickListener {
-            val recipeId = recipe.id
-            Toast.makeText(
-                holder.itemView.context,
-                "Share button clicked, ID: $recipeId",
-                Toast.LENGTH_SHORT
-            ).show()
+            actionClickListener(recipe, "Share")
         }
     }
 

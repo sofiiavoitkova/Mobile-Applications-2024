@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.SearchView
+import android.widget.Toast
 import com.example.accountcreate.R
 import kotlinx.coroutines.launch
 import androidx.lifecycle.lifecycleScope
@@ -19,7 +20,21 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = ListAdapter(emptyList())
+        adapter = ListAdapter(
+            emptyList(),
+            itemClickListener = { recipe ->
+                Toast.makeText(requireContext(), "Clicked ID: ${recipe.id}", Toast.LENGTH_SHORT)
+                    .show()
+            },
+            actionClickListener = { recipe, action ->
+                Toast.makeText(
+                    requireContext(),
+                    "$action clicked, ID: ${recipe.id}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        )
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
